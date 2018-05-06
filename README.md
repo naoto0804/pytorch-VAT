@@ -22,7 +22,7 @@ Error rate: about 30%
 
 ### Train classifier with mixture of labeled and unlabeled data (100 images)
 ```
-CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py --n_label 100
+CUDA_VISIBLE_DEVICES=<gpu_id> python train_vat.py --n_label 100
 ```
 Error rate: about 2%
 
