@@ -16,15 +16,15 @@ Please note that this is an ongoing project and I cannot fully reproduce the res
 
 These examples are for the MNIST to USPS experiment.
 
-### Train classifier with only labeled data
+### Train classifier with only labeled data (100 images)
 ```
-CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py
+CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py --n_label 100
 ```
 Error rate: about 30%
 
-### Train classifier with mixture of labeled and unlabeled data
+### Train classifier with mixture of labeled and unlabeled data (100 images)
 ```
-CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py
+CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py --n_label 100
 ```
 Error rate: about 2%
 
