@@ -48,7 +48,7 @@ def experiment(base_lr, num_iterations, alpha, eps, xi, n_label, n_val,
 
     optimizer = Adam(list(cls.parameters()), lr=base_lr)
 
-    vat_criterion = VAT(cls, device, eps, xi, use_entmin=use_entmin)
+    vat_criterion = VAT(device, eps, xi, use_entmin=use_entmin)
 
     l_train_iter = iter(DataLoader(train_l, batch_size_l, num_workers=4,
                                    sampler=InfiniteSampler(
@@ -66,7 +66,7 @@ def experiment(base_lr, num_iterations, alpha, eps, xi, n_label, n_val,
         ul_x = ul_x.to(device)
 
         sup_loss = F.cross_entropy(cls(l_x), l_y)
-        unsup_loss = alpha * vat_criterion(ul_x)
+        unsup_loss = alpha * vat_criterion(cls, ul_x)
         loss = sup_loss + unsup_loss
 
         optimizer.zero_grad()
