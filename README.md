@@ -14,8 +14,6 @@ Please note that this is an ongoing project and I cannot fully reproduce the res
 
 ## Usage
 
-These examples are for the MNIST to USPS experiment.
-
 ### Train classifier with only labeled data (100 images)
 ```
 CUDA_VISIBLE_DEVICES=<gpu_id> python train_baseline.py --n_label 100
